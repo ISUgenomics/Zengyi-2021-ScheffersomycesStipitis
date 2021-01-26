@@ -1,3 +1,8 @@
 # Results
 
-Written summary of results obtained in this repo. This is the results write up for the paper and includes figures.
+table of inserts location on the genome
+
+|   strain | insert | location |
+|--- | ---| ---|
+| 6 | | |
+| NC-22 | | |
