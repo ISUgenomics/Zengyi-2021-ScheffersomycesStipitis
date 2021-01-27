@@ -399,7 +399,7 @@ gmap probably did only picked `GTDNUdownstream` insert because it is more used f
 | insert | gmap location | gmap CIGAR|  minimap location | minimap CIGAR|
 | --- | --- | --- | ---| ---|
 |1.BSA4upstream  | NA |NA |777685 |517M484S |
-|2.GTDNUdownstream |333817 |!!! | 333817| 395S112M1D71M1D414M9S| 
+|2.GTDNUdownstream |333817 |!!! | 333817| 395S112M1D71M1D414M9S|
 -----
 ####  Barcode14 (NC22) alignments:
 
@@ -506,7 +506,7 @@ less inserts-minimap.fasta     | sed 's/contig_4/contig_4-4.BTDNU-loxP/g' | sed 
 
 Running gmap and minimap2 with script mentioned above.
 
-alignment results:
+
 
 | insert | gmap location | gmap CIGAR|  minimap location | minimap CIGAR|
 | --- | --- | --- | ---| ---|
