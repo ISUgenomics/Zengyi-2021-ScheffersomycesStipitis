@@ -127,5 +127,5 @@ alignment results from the sam files:
 
 | insert | gmap location | gmap CIGAR|  minimap location | minimap CIGAR|
 | --- | --- | --- | ---| ---|
-| 2.GTDNUdownstream| NA |NA| 593474 | 2S999M |
+| 2.GTDNUdownstream| NA |NA|PQNB01000019.1 593474 | 2S999M |
 | 1.BSA4upstream|NA| NA |NA|NA|

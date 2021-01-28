@@ -175,8 +175,12 @@ contig_6-6.BNU-loxP:3435111-3441450	16	PQNB01000001.1	1961659	40	3081S94M1D452M2
 ```
 gmap could not find the primary alignment that minimap2 did found for `6.BNU-loxP` .
 
+```
+grep -v "@SQ" aln-b15-minimap.sam  | awk '$3!="*"'  | awk '{print $1, $2, $3, $4}'
+```
 
 | insert | gmap location | gmap CIGAR|  minimap location | minimap CIGAR|
 | --- | --- | --- | ---| ---|
-|5.BTDN | NA |NA| 31875 | 1S1000M |
-|6.BNU-loxP  |1961659| 3081S94M1D452M2713S |348838|738M263S|
+|5.BTDN | NA |NA|PQNB01000005.1 31875 | 1S1000M |
+|6.BNU-loxP  |1961659| 3081S94M1D452M2713S |348838 348838|738M263S|
+|6.BNU-loxP  (second location)| NA| NA| PQNB01000001.1 1961940 | 1H268M732H | 
