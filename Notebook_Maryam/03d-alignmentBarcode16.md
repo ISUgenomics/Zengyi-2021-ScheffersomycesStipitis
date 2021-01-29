@@ -124,6 +124,10 @@ alignment results from the sam files:
 * /work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/b16/aln-b16-minimap.sam
 * /work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/b16/b16-gmap.sam
 
+```
+grep -v "@SQ" aln-b16-minimap.sam  | awk '$3!="*"'  | awk '{print $1, $2, $3, $4, $6}'
+
+```
 
 | insert | gmap location | gmap CIGAR|  minimap location | minimap CIGAR|
 | --- | --- | --- | ---| ---|

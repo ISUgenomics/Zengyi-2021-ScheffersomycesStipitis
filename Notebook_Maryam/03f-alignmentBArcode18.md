@@ -120,8 +120,11 @@ alignment results from the sam files:
 * minimap error :`minimap2: sketch.c:83: mm_sketch: Assertion `len > 0 && (w > 0 && w < 256) && (k > 0 && k <= 28)' failed.
 Aborted (core dumped)`
 
+```bash
+grep -v "@SQ" aln-b18-minimap.sam  | awk '$3!="*"'  | awk '{print $1, $2, $3, $4, $6}'
+```
 
 | insert | gmap location | gmap CIGAR|  minimap location | minimap CIGAR|
 | --- | --- | --- | ---| ---|
-| 2.GTDNUdownstream| NA |NA |||
-| 1.BSA4upstream|526936|!!!!  || |
+| 2.GTDNUdownstream| NA |NA |NA|NA|
+| 1.BSA4upstream|526936|!!!!  |NA|NA |

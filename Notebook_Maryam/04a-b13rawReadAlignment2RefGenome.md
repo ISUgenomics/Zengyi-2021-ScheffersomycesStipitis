@@ -27,10 +27,22 @@ ln -s ../../00-RawData/barcode13/combine-barcode13.fastq .
 
 ```
 
-running alignment of raw reads to the insert.
+I tried aligning the raw reads onto the insert and also tried aligning insert onto the raw reads. I also changed some parameters:
 
-```bash
 
+-N to get more alignments on the same target ( default was 5). This is specially important whan I am trying to align the reads on one insert!
+
+-p this is the ratio of primary to secondary ratio. by reducing this number we get more alignments, we get some alignment with lower alignment score. The default  is 0.8. With p=0.8 we get very few alignments. With 0.1 we got too much noise.  
+
+
+
+
+```
+minimap2 -aLx map-ont -p 0.5   -N 1000000 combine-barcode13.fastq   1.BSA4upstream.fasta   > aln-insert_1.BSA4ups
+tream2rawReads.sam
+
+minimap2 -aLx map-ont  -p 0.5 -N 1000000 1.BSA4upstream.fasta combine-barcode13.fastq > aln-rawReads2insert_1.BSA
+4upstream.sam
 ```
 
 Now I get the list of the reads that have aligned to the insert.

@@ -121,9 +121,12 @@ Running gmap and minimap2:
 
 alignment results from the sam files:
 
-* check this error message:`No paths found for contig_25-1.BSA4upstream:783604-800669`
+```bash
+ grep -v "@SQ" aln-b17-minimap.sam  | awk '$3!="*"'  | awk '{print $1, $2, $3, $4, $6}'
+ ```
+
 
 | insert | gmap location | gmap CIGAR|  minimap location | minimap CIGAR|
 | --- | --- | --- | ---| ---|
-| 2.GTDNUdownstream| 199853 | !! |1060119  | 1S1000M|
-| 1.BSA4upstream|NA| NA |777685|517M484S|
+| 2.GTDNUdownstream| 199853 | !! |PQNB01000019.1 1060119  | 1S1000M|
+| 1.BSA4upstream|NA| NA | PQNB01000001.1 777685|517M484S|
