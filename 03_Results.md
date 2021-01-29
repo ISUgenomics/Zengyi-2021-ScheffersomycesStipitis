@@ -4,7 +4,7 @@ Summary of insert locations.
 
 
 | strain | insert | position of the insert on the reference genome | confirmed by alignment of inserts on the assembly | confirmed by alignment of reads containing insert to the ref genome (hist)| confirmed by dotplot |
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | b13 | 1. | |yes|yes| yes|
 | b13 | 2. | |yes |yes| yes|
 | b13 | 2. (second location)| |yes |yes | yes|
@@ -30,4 +30,4 @@ Summary of insert locations.
 |  | | | | | |
 | 19 | 1.BSA4upstream | PQNB01000001.1 1390771 |yes |yes |yes |
 | b19 |2.GTDNUdownstream |PQNB01000028.1 440888 | | |
-| PQNB01000019 |2.GTDNUdownstream (second location)  | 	back to back the previous one | | | 
+| PQNB01000019 |2.GTDNUdownstream (second location)  | 	back to back the previous one | | |
