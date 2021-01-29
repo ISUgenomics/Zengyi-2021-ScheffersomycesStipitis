@@ -4,10 +4,11 @@
 
 For this strain we know that inserts `1.BSA4upstream` and `2.GTDNUdownstream` have been integrated.
 
-| insert |  minimap location | minimap CIGAR|
-| --- |  ---| ---|
-|1.BSA4upstream  |  PQNB01000001.1 777685 |517M484S |
-|2.GTDNUdownstream |   PQNB01000001.1 333817| 395S112M1D71M1D414M9S|
+| insert |  minimap location on ref | minimap CIGAR| minimap location on assembly|
+| --- |  ---| ---|---|
+|1.BSA4upstream  |  PQNB01000001.1 777685 |517M484S |contig_18 784739|
+|2.GTDNUdownstream |   PQNB01000001.1 333817| 395S112M1D71M1D414M9S|scaffold_3 1109630|
+|2.GTDNUdownstream | | | scaffold_3 1101573| 
 
 ```
 ./run_alignment.bash 13 1.BSA4upstream
