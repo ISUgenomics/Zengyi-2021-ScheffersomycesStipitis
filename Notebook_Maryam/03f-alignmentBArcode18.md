@@ -40,7 +40,7 @@ I will use two different aligner to compare their results, minimap2 and gmap:
 
 #### Minimap2
 
-For `minimap2` aligner I use 1000 base pair down stream of the insertion location on the assembled genome:
+For `minimap2` aligner I use 1000 base pair up stream of the insertion location on the assembled genome:
 
 * 1.BSA4upstream insert
 
