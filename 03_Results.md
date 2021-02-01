@@ -17,8 +17,8 @@ Summary of insert locations.
 | b15 | 5.  (second location)|??? | ??| |??? |
 | b15 | 6. | PQNB01000001.1 1961940|yes |yes |yes(almost 5*insert length)|
 |  | | | | | |
-| b16| 1. | PQNB01000001.1	139081| NO |yes (we see it on the histogram different location but we think it is aligned wrongly, we think there might be rearrange) | yes|
-|b16  | 2. | PQNB01000019.1	 1590467 |NO |yes (we see it on the histogram different location but we think it is aligned wrongly, we think there might be rearrage) | yes|
+| b16| 1. | PQNB01000001.1	139081| yes |No (we see it on the histogram different location but we think it is aligned wrongly, we think there might be rearrange) | yes|
+|b16  | 2. | PQNB01000019.1	 1590467 | yes |No (we see it on the histogram different location but we think it is aligned wrongly, we think there might be rearrange) | yes|
 |  | | | | | |
 | b17 | 1.BSA4upstream |PQNB01000001.1 778203 | yes| yes|yes |
 | b17 | 2.GTDNUdownstream  | PQNB01000019.1 1123859| yes|yes |yes |
