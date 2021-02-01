@@ -133,3 +133,19 @@ grep -v "@SQ" aln-b16-minimap.sam  | awk '$3!="*"'  | awk '{print $1, $2, $3, $4
 | --- | --- | --- | ---| ---|
 | 2.GTDNUdownstream| NA |NA|PQNB01000019.1 593474 | 2S999M |
 | 1.BSA4upstream|NA| NA |NA|NA|
+
+
+----------
+The alignment of reference with assmebly made us believe that I need longer portion of assembly to align on the ref genome. Before I was using 100 bp upstream of the insertion position. I am going to try with 10k bp.
+
+* 1.BSA4upstream insert
+
+from the sam file I know the insert location : contig_7 1979461
+
+```bash
+cd /work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/b16
+```
+
+```
+samtools faidx assembly-b16.fasta contig_7:1978461-1995026 > 1.BSA4upstream-c7-1978461-1995026-gmap.fasta
+```
