@@ -3,19 +3,16 @@
 
 ## Organism
 Scheffersomyces Stipitis
+
 ## Objective
+Identify the locations of known Insert sequences
 
 ## Deliverables and Goals
 
-* Goal 1
-* Goal
+* Provide a table of locations of known sequences
+* Document how the locations were determined
 
-## Literature related to project
 
-* [paper]()
-  * description of paper
-* [paper]()
-  * description of paper
 
 ## Relevant email and other communication
 
