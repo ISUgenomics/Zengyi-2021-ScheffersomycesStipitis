@@ -14,7 +14,6 @@ Summary of insert locations.
 | barcode 14 (strain NC-22) | 4.BTDNU-loxP(second location) | | yes | yes |yes  |
 | | | |  || |
 | barcode 15 (strain N29) | 5.BTDN | | yes| No|yes |
-| barcode 15 (strain N29) | 5.BTDN  (second location)|??? | ??| |??? |
 | barcode 15 (strain N29) | 6.BNU-loxP | PQNB01000001.1 1961940|yes |yes |yes(almost 5*insert length)|
 |  | | | | | |
 | barcode 16 (strain 53)| 1.BSA4upstream | PQNB01000001.1	139081| yes |No (we see it on the histogram different location but we think it is aligned wrongly, we think there might be rearrange) | yes|
@@ -29,5 +28,5 @@ Summary of insert locations.
 | barcode 18 (strain 59) |2.GTDNUdownstream (second location)  | PQNB01000022.1	back to back the previous one | yes | yes | yes|
 |  | | | | | |
 | barcode 19 (strain 88) | 1.BSA4upstream | PQNB01000001.1 1390771 |yes |yes |yes |
-| barcode 19 (strain 88) |2.GTDNUdownstream |PQNB01000028.1 440888 |yes |yes |
-| barcode 19 (strain 88) |2.GTDNUdownstream (second location)  | 	back to back the previous one | yes|yes |
+| barcode 19 (strain 88) |2.GTDNUdownstream |PQNB01000028.1 440888 |yes |yes |yes|
+| barcode 19 (strain 88) |2.GTDNUdownstream (second location)  | 	back to back the previous one | yes|yes |yes|
