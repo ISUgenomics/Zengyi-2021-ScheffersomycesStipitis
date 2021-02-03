@@ -455,3 +455,46 @@ scaffold_3-2.GTDNUdownstream:1108630-1116503 0 PQNB01000001.1 333817 395S112M1D7
 
 I did get the same alignment as before.
 Which was confirmed by minimap2 for `2.GTDNUdownstream`. Still didn't get any alignment for `1.BSA4upstream`.
+
+---------
+---------
+
+#### Alignment of larger assembly sections on the reference genome using minimap
+
+* Feb 1 , 2021
+* Nova:/work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment
+
+We decided that gmap is not suitable for aligning nanopore reads. It is designed for shorter reads that are less noisy. So From now on I will only focus on minimap alignments.
+
+
+I have aligned sections of assembly 1000 bp upstream of the insertion on the reference genome to estimate the insertion site on the ref. In some cases the location we got on the ref and assembly did not match. We have 2 pieces of evidence.
+1. From the dotplots we can estimate the insertion site.
+2. We learned that the location of insert 1 in 5 out of 7 strains are the same. This insert was first integrated and then the second insert was integrated randomly. We did not see the same location on the ref genome. We think the reason is the piece of assembly we picked for alignment is too short (we picked 1000bp). So I am going to repeat all the alignments of assembly sections on the genome with sections 10k bp upstream of each assembly.
+
+location of inserts on the assembly :
+
+```bash
+grep -v "@SQ" aln-b13.sam | awk '$3!="*"'  | grep "1.BSA4upstream"|awk '{print $1, $2, $3, $4, $6}'
+```
+```
+1.BSA4upstream 16 contig_18 784739 15065M
+```
+```bash
+grep -v "@SQ" aln-b13.sam | awk '$3!="*"'  | grep "2.GTDNUdownstream"|awk '{print $1, $2, $3, $4, $6}'
+```
+```
+2.GTDNUdownstream 0 scaffold_3 1109630 407M1I73M1I1060M1I2195M1I2441M1I2688M4S
+2.GTDNUdownstream 272 scaffold_3 1101573 817S1870M1I2117M1I78M1I243M1I2197M1I1059M1I71M1I414M
+```
+
+Combining the read sections:
+```
+cat *-minimap.fasta > inserts-minimap.fasta
+```
+I renamed the sections so it is easier to find them in the sam file.
+
+Running minimap
+```bash
+minimap2 -aLx map-ont  /work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/b13/inserts-minimap.fasta  /work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/GCA_006942115.1_ASM694211v1_genomic.fna > /work/gif/Maryam/projects/Zengyi
+-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/b13/aln-b13.sam 
+```

@@ -183,4 +183,36 @@ grep -v "@SQ" aln-b15-minimap.sam  | awk '$3!="*"'  | awk '{print $1, $2, $3, $4
 | --- | --- | --- | ---| ---|
 |5.BTDN | NA |NA|PQNB01000005.1 31875 | 1S1000M |
 |6.BNU-loxP  |1961659| 3081S94M1D452M2713S |348838 348838|738M263S|
-|6.BNU-loxP  (second location)| NA| NA| PQNB01000001.1 1961940 | 1H268M732H | 
+|6.BNU-loxP  (second location)| NA| NA| PQNB01000001.1 1961940 | 1H268M732H |
+
+
+--------
+--------
+#### Alignment of larger assembly sections on the reference genome using minimap
+
+* Feb 1 , 2021
+* Nova:/work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/b14
+
+I know the location of inserts. I select 10k bp upstream of the insertion from the assembly and align it on the reference.
+
+```
+samtools faidx assembly-b15.fasta contig_4:2048782-2058782  > 5.BTDN-c4-2048782-2058782-minimap.fasta
+samtools faidx assembly-b15.fasta contig_6:3425111-3435111  > 6.BNU-loxP-c6-3425111-3435111-minimap.fasta
+
+cat *-minimap.fasta > inserts-minimap.fasta
+
+minimap2 -aLx map-ont  /work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/GCA_006942115.1_ASM694211v1_genomic.fna  inserts-minimap.fasta > aln-b15.sam
+
+grep -v "@SQ" aln-b15.sam | awk '$3!="*"'  | awk '{print $1, $2, $3, $4, $6}'
+```
+```
+5.BTDN-contig_4:2048782-2058782 16 PQNB01000005.1 31875 1S2735M3D5087M1D1526M1D652M
+6.BNU-loxP-contig_6:3425111-3435111 16 PQNB01000008.1 239895 6273S2842M1D886M
+6.BNU-loxP-contig_6:3425111-3435111 2048 PQNB01000001.1 347541 7703H2035M263H
+6.BNU-loxP-contig_6:3425111-3435111 2048 PQNB01000022.1 720652 3721H1586M4694H
+6.BNU-loxP-contig_6:3425111-3435111 2048 PQNB01000019.1 1002135 5662H1099M3240H
+6.BNU-loxP-contig_6:3425111-3435111 2048 PQNB01000011.1 198983 6758H795M2448H
+6.BNU-loxP-contig_6:3425111-3435111 2064 PQNB01000001.1 1963247 4335H361M5305H
+6.BNU-loxP-contig_6:3425111-3435111 2064 PQNB01000001.1 1961940 1H268M9732H
+6.BNU-loxP-contig_6:3425111-3435111 2048 PQNB01000023.1 405895 7553H150M2298H
+```

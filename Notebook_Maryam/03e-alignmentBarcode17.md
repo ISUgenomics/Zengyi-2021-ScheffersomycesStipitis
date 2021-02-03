@@ -130,3 +130,39 @@ alignment results from the sam files:
 | --- | --- | --- | ---| ---|
 | 2.GTDNUdownstream| 199853 | !! |PQNB01000019.1 1060119  | 1S1000M|
 | 1.BSA4upstream|NA| NA | PQNB01000001.1 777685|517M484S|
+
+--------
+--------
+#### Alignment of larger assembly sections on the reference genome using minimap
+
+* Feb 1 , 2021
+* Nova:/work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/b14
+
+I know the location of inserts. I select 10k bp upstream of the insertion from the assembly and align it on the reference.
+
+```
+samtools faidx assembly-b17.fasta contig_25:774604-784604  > 1.BSA4upstream-c25-774604-784604-minimap.fasta
+samtools faidx assembly-b17.fasta contig_27:1113601-1123601  > 2.GTDNUdownstream-c27-1113601-1123601-minimap.fasta
+samtools faidx assembly-b17.fasta contig_27:1122463-1132463  > 2.GTDNUdownstream-c27_2-1122463-1132463-minimap.fasta
+
+cat *-minimap.fasta > inserts-minimap.fasta
+
+minimap2 -aLx map-ont  /work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/GCA_006942115.1_ASM694211v1_genomic.fna  inserts-minimap.fasta > aln-b17.sam
+
+grep -v "@SQ" aln-b17.sam | awk '$3!="*"'  | awk '{print $1, $2, $3, $4, $6}'
+```
+
+```
+1.BSA4upstream-contig_25:774604-784604 0 PQNB01000001.1 768685 9517M484S
+2.GTDNUdownstream-contig_27:1113601-1123601 16 PQNB01000019.1 1060119 1S7591M1D2269M1D140M
+2.GTDNUdownstream_2-contig_27:1122463-1132463 16 PQNB01000006.1 621765 7346S146M3D1131M1D211M1167S
+2.GTDNUdownstream_2-contig_27:1122463-1132463 2064 PQNB01000019.1 1060119 8863H1138M
+2.GTDNUdownstream_2-contig_27:1122463-1132463 2048 PQNB01000001.1 333817 9396H38M1I11M1D62M1D66M1D213M1D205M9H
+2.GTDNUdownstream_2-contig_27:1122463-1132463 2064 PQNB01000001.1 339391 1621H4M1D326M1D237M7813H
+2.GTDNUdownstream_2-contig_27:1122463-1132463 2064 PQNB01000001.1 1961659 6087H547M3367H
+2.GTDNUdownstream_2-contig_27:1122463-1132463 2064 PQNB01000006.1 526937 3984H233M1D301M5483H
+2.GTDNUdownstream_2-contig_27:1122463-1132463 2064 PQNB01000006.1 528580 3674H68M1D236M6023H
+2.GTDNUdownstream_2-contig_27:1122463-1132463 2048 PQNB01000022.1 719752 8383H66M1D233M1319H
+2.GTDNUdownstream_2-contig_27:1122463-1132463 2048 PQNB01000006.1 626849 3920H150M5931H
+2.GTDNUdownstream_2-contig_27:1122463-1132463 2048 PQNB01000023.1 405895 2698H155M7148H
+```

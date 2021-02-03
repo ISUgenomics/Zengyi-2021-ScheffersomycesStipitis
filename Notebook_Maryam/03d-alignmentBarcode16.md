@@ -149,3 +149,28 @@ cd /work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/un
 ```
 samtools faidx assembly-b16.fasta contig_7:1978461-1995026 > 1.BSA4upstream-c7-1978461-1995026-gmap.fasta
 ```
+
+--------
+--------
+#### Alignment of larger assembly sections on the reference genome using minimap
+
+* Feb 1 , 2021
+* Nova:/work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/b14
+
+I know the location of inserts. I select 10k bp upstream of the insertion from the assembly and align it on the reference.
+
+```
+samtools faidx assembly-b16.fasta contig_7:1969461-1979461  > 1.BSA4upstream-c7-1969461-1979461-minimap.fasta
+samtools faidx assembly-b16.fasta contig_5:1579947-1589947  > 2.GTDNUdownstream-c5-1579947-1589947-minimap.fasta
+
+ cat *-minimap.fasta > inserts-minimap.fasta
+
+minimap2 -aLx map-ont  /work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/GCA_006942115.1_ASM694211v1_genomic.fna  inserts-minimap.fasta > aln-b16.sam
+
+grep -v "@SQ" aln-b16.sam | awk '$3!="*"'  | awk '{print $1, $2, $3, $4, $6}'
+
+```
+```
+1.BSA4upstream-contig_7:1969461-1979461 16 PQNB01000001.1 778195 500S1728M1D6754M1D1019M
+2.GTDNUdownstream-contig_5:1579947-1589947 16 PQNB01000019.1 593474 2S3226M1D539M1D6234M
+```

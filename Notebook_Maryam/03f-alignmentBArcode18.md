@@ -128,3 +128,38 @@ grep -v "@SQ" aln-b18-minimap.sam  | awk '$3!="*"'  | awk '{print $1, $2, $3, $4
 | --- | --- | --- | ---| ---|
 | 2.GTDNUdownstream| NA |NA |NA|NA|
 | 1.BSA4upstream|526936|!!!!  |NA|NA |
+
+--------
+--------
+#### Alignment of larger assembly sections on the reference genome using minimap
+
+* Feb 1 , 2021
+* Nova:/work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/b14
+
+I know the location of inserts. I select 10k bp upstream of the insertion from the assembly and align it on the reference.
+
+```
+samtools faidx assembly-b18.fasta scaffold_10:886527-896527  > 2.GTDNUdownstream-S10-886527-896527-minimap.fasta
+faidx assembly-b18.fasta scaffold_10:895392-905392  > 2.GTDNUdownstream-S10-895392-905392-minimap.fasta
+samtools faidx assembly-b18.fasta contig_9:774693-784693  > 1.BSA4upstream-c9_774693-784693-minimap.fasta
+
+cat *-minimap.fasta > inserts-minimap.fasta
+
+minimap2 -aLx map-ont /work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/GCA_006942115.1_ASM694211v1_genomic.fna inserts-minimap.fasta
+
+grep -v "@SQ" aln-b18.sam | awk '$3!="*"'  | awk '{print $1, $2, $3, $4, $6}'
+```
+```
+1.BSA4upstream-contig_9:774693-784693 0 PQNB01000001.1 768685 9517M484S
+2.GTDNUdownstream-scaffold_10:886527-896527 0 PQNB01000022.1 605582 7896M4D771M1D1329M5S
+2.GTDNUdownstream_2-scaffold_10:895392-905392 0 PQNB01000006.1 621765 8476S146M3D1131M1D211M37S
+2.GTDNUdownstream_2-scaffold_10:895392-905392 2048 PQNB01000022.1 614452 1131M8870H
+2.GTDNUdownstream_2-scaffold_10:895392-905392 2064 PQNB01000001.1 333817 8267H599M1135H
+2.GTDNUdownstream_2-scaffold_10:895392-905392 2048 PQNB01000001.1 339391 2751H4M1D564M6682H
+2.GTDNUdownstream_2-scaffold_10:895392-905392 2048 PQNB01000001.1 1961659 7218H94M1D452M2237H
+2.GTDNUdownstream_2-scaffold_10:895392-905392 2048 PQNB01000006.1 526936 5115H82M1D151M1D301M4352H
+2.GTDNUdownstream_2-scaffold_10:895392-905392 2048 PQNB01000006.1 528580 4805H68M1D236M4892H
+2.GTDNUdownstream_2-scaffold_10:895392-905392 2064 PQNB01000022.1 719752 7253H300M2448H
+2.GTDNUdownstream_2-scaffold_10:895392-905392 2064 PQNB01000006.1 626849 2789H150M7062H
+2.GTDNUdownstream_2-scaffold_10:895392-905392 2064 PQNB01000023.1 405895 1568H155M8278H
+```
