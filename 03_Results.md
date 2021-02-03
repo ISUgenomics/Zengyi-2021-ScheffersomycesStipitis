@@ -21,12 +21,12 @@ Summary of insert locations.
 |  | | | | | |
 | barcode 17 (strain 55) | 1.BSA4upstream |PQNB01000001.1 768685 | contig_25 784604| yes| yes|yes |
 | barcode 17 (strain 55) | 2.GTDNUdownstream  | PQNB01000019.1 1060119|contig_27 1123601| yes|yes |yes |
-| barcode 17 (strain 55) | 2.GTDNUdownstream  |(back to back) |PQNB01000019.1 1060119 | yes|yes |yes |
+| barcode 17 (strain 55) | 2.GTDNUdownstream  (second location back to back) |PQNB01000019.1 1060119 | |yes|yes |yes |
 |  | | | | | |
 | barcode 18 (strain 59) | 1.BSA4upstream |PQNB01000001.1 768685|contig_9 784693 | yes | yes | yes|
 | barcode 18 (strain 59) |2.GTDNUdownstream  | PQNB01000022.1 605582 |scaffold_10 896527| yes | yes | yes|
-| barcode 18 (strain 59) |2.GTDNUdownstream (second location)  | PQNB01000022.1 614452	back to back the previous one |scaffold_10 905392| yes | yes | yes|
+| barcode 18 (strain 59) |2.GTDNUdownstream (second location back to back)  | PQNB01000022.1 614452	 |scaffold_10 905392| yes | yes | yes|
 |  | | | | | |
-| barcode 19 (strain 88) | 1.BSA4upstream | PQNB01000001.1 1390771| |yes |yes |yes |
-| barcode 19 (strain 88) |2.GTDNUdownstream |PQNB01000028.1 440888 ||yes |yes |yes|
-| barcode 19 (strain 88) |2.GTDNUdownstream (second location)  | 	back to back the previous one || yes|yes |yes|
+| barcode 19 (strain 88) | 1.BSA4upstream | PQNB01000001.1 778195|contig_6 1970041 |yes |yes |yes |
+| barcode 19 (strain 88) |2.GTDNUdownstream |PQNB01000028.1 440888 |contig_7 3073445|yes |yes |yes|
+| barcode 19 (strain 88) |2.GTDNUdownstream (second location back to back)  |PQNB01000028.1 440888 |contig_7 3082313| yes|yes |yes|

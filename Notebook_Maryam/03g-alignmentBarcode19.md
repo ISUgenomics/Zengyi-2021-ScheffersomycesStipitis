@@ -95,3 +95,41 @@ contig_7.2.GTDNUdownstream:3072445-3073445 16 PQNB01000028.1 440888 2S999M
 | 2.GTDNUdownstream| PQNB01000028.1 440888 |2S999M|
 
 both are very good alignments based on their CIGAR.
+
+
+--------
+--------
+#### Alignment of larger assembly sections on the reference genome using minimap
+
+* Feb 2 , 2021
+* Nova:/work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/b14
+
+I know the location of inserts. I select 10k bp upstream of the insertion from the assembly and align it on the reference.
+
+```
+samtools faidx assembly-b19.fasta contig_6:1960041-1970041   > 1.BSA4upstream-c6-1960041-1970041-minimap.fasta
+samtools faidx assembly-b19.fasta contig_7:3072313-3082313   > 2.GTDNUdownstream-c7-3072313-3082313-minimap.fasta
+samtools faidx assembly-b19.fasta contig_7:3063445-3073445   > 2.GTDNUdownstream-c7-3063445-3073445-minimap.fasta
+
+cat *-minimap.fasta > inserts-minimap.fasta
+
+minimap2 -aLx map-ont  /work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/GCA_006942115.1_ASM694211v1_genomic.fna  inserts-minimap.fasta > aln-b19.sam
+
+grep -v "@SQ" aln-b19.sam | awk '$3!="*"'  | awk '{print $1, $2, $3, $4, $6}'
+```
+```
+contig_6:1960041-1970041 16 PQNB01000001.1 778195 499S39M1I3680M1D5782M
+contig_6:1969041-1970041 16 PQNB01000001.1 778195 499S39M1I462M
+contig_7:3063445-3073445 16 PQNB01000028.1 440888 2S2305M1D2856M1D1440M1D710M2D2688M
+contig_7:3072313-3082313 0 PQNB01000006.1 621765 8473S146M3D1131M1D211M40S
+contig_7:3072313-3082313 2064 PQNB01000028.1 440888 8870H1131M
+contig_7:3072313-3082313 2064 PQNB01000001.1 333817 8271H184M1D419M1127H
+contig_7:3072313-3082313 2048 PQNB01000001.1 339391 2747H4M1D564M6686H
+contig_7:3072313-3082313 2048 PQNB01000001.1 1961659 7215H94M1D452M2240H
+contig_7:3072313-3082313 2048 PQNB01000006.1 526936 5111H234M1D301M4355H
+contig_7:3072313-3082313 2048 PQNB01000006.1 528580 4801H68M1D236M4896H
+contig_7:3072313-3082313 2064 PQNB01000022.1 719752 7257H300M2444H
+contig_7:3072313-3082313 2064 PQNB01000006.1 626849 2792H150M7059H
+contig_7:3072313-3082313 2064 PQNB01000023.1 405895 1571H155M8275H
+contig_7:3072445-3073445 16 PQNB01000028.1 440888 2S999M
+```
