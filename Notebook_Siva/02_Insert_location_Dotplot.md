@@ -8,6 +8,6 @@
 |55(barcode17)|2.GTDNUdownstream|*PQNB01000019.1*:1123859|*contig_27*:784111|*contig_27*:800106|2x ()|
 |59(barcode18)|1.BSA4upstream|*PQNB01000001.1*:778203|*contig_9*:784170|*contig_9*:800219|1x|
 |59(barcode18)|2.GTDNUdownstream|*PQNB01000022.1*:615600|*scaffold_10*:896332|*cscaffold_10*:914386|2x()|
-|88(barcode18)|1.BSA4upstream|*PQNB01000001.1*:1390849|*contig_6*:1969355|*contig_6*:1985366|1x|
-|88(barcode18)|1.BSA4upstream|*PQNB01000001.1*:161184|*contig_6*:733370|*contig_6*:739432|Truncated (6000ish)|
-88(barcode18)|2.GTDNUdownstream |*PQNB01000028.1*:471949|*contig_7*:3073264|*contig_7*:3090870|2x|
+|88(barcode19)|1.BSA4upstream|*PQNB01000001.1*:1390849|*contig_6*:1969355|*contig_6*:1985366|1x|
+|88(barcode19)|1.BSA4upstream|*PQNB01000001.1*:161184|*contig_6*:733370|*contig_6*:739432|Truncated (6000ish)|
+88(barcode19)|2.GTDNUdownstream |*PQNB01000028.1*:471949|*contig_7*:3073264|*contig_7*:3090870|2x|
