@@ -1,7 +1,23 @@
 # Methods
 
-Written summary of methods performed in this repo. This is the methods write up for the paper.
 
 ## Sample Collection
 
-## Sequence Analysis\
+## Sequence Analysis
+In order to estimate the insert locations, all strains have beed subject to nanopore sequencing using [GridION X5](https://nanoporetech.com/products/gridion) from Oxford Nanopore Technologies. For each strain we assembles a genome and locate the insert on that genome as will be discussed further bellow.   
+
+## QC and trimming
+
+The nextflow workflow, [NanoQCtrim] (https://github.com/isugifNF/nanoQCtrim), was used for quality control and trimming of the reads. This workflow uses Nanoplot (v. 1.32.0) for quality control and trims adaptors using downpore (v. 0.3.3). Default parameters were used for Nanoplot.  For Downpore, the identity matching threshold for the adaptors found in the middle  was increased to 100% (default is 85%).  No adapter sequences were identified in the final assemblies based on a minimp2 alignment of adapters using default parameters.
+
+## Assembly
+
+We used Flye (v.2.8.2-b1691) for de novo assembly of each of the strain's genomes. Quality of the assemblies were assessed using the nextflow pipeline [assemblyStats](https://github.com/isugifNF/assemblyStats). The pipeline provides some useful statistics about the assembly as well as BUSCO score. Busco version of v4.1.4_cv1 with the Fungi library (fungi_odb10) was used to test for the completeness of the genome assembly.
+
+## Alignment
+
+Minimap2 (v. 2.2-r409) was used for all the alignments performed during this study. The known insert sequences were aligned to the each assembled genome. Upstream sequence of each aligned insert to the assembled genome was extracted (10,000 bases) and then aligned to the reference genome (ASM694211v1) to identify the insert location in the reference genome.
+
+
+## Comparing genomes using dotplot
+We used [re-DOT-able](https://www.bioinformatics.babraham.ac.uk/projects/redotable/) to compare the reference genome and assembled genome for each strain. 
