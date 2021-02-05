@@ -19,6 +19,9 @@ We used Flye (v.2.8.2-b1691) for de novo assembly of each of the strain's genome
 [Minimap2](https://github.com/lh3/minimap2) (v. 2.2-r409) was used for all the alignments performed during this study. The known insert sequences were aligned to each assembled genome. Upstream sequence of each aligned insert to the assembled genome was extracted (10,000 bases) and then aligned to the reference genome (ASM694211v1) to identify the insert location in the reference genome.
 
 
-
 ## Comparing genomes using dotplot
+<<<<<<< HEAD
+We used [re-DOT-able](https://www.bioinformatics.babraham.ac.uk/projects/redotable/) to compare the reference genome and assembled genome for each strain.
+=======
 In order to visualize pairwise comparison between sequences we used a desktop app ([re-DOT-able](https://www.bioinformatics.babraham.ac.uk/projects/redotable/) ) from Babraham Bioinformatics to plot  interactively and also save the plots as images. We made pairwise comparisons between the reference genome and each of the seven assembled genomes to look for insert location and for any genome re-arrangements. In order to check the location Additionally we also plotted each assembly against the relevant insert sequences. For detailed information; Simon Andrews, the developer has a really good [video tutorial](https://www.youtube.com/watch?v=qPxl2hflG9Q&feature=emb_logo).
+>>>>>>> ab3610188d05a605c52c9c339bb3b3433392eccd
