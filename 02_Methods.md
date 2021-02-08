@@ -8,7 +8,7 @@ In order to estimate the insert locations, all strains have beed subject to nano
 
 ## QC and trimming
 
-The [nextflow](https://www.nextflow.io/) workflow, [NanoQCtrim](https://github.com/isugifNF/nanoQCtrim), was used for quality control and trimming of the reads. This workflow uses [NanoPlot](https://github.com/wdecoster/NanoPlot) (v. 1.32.0) for quality control and trims adaptors using [downpore](https://github.com/jteutenberg/downpore) (v. 0.3.3). Default parameters were used for Nanoplot.  For Downpore, the identity matching threshold for the adaptors found in the middle  was increased to 100% (default is 85%).  No adapter sequences were identified in the final assemblies based on a minimp2 alignment of adapters using default parameters.
+The [nextflow](https://www.nextflow.io/) workflow, [NanoQCtrim](https://github.com/isugifNF/nanoQCtrim), was used for quality control and trimming of the reads. This workflow uses [NanoPlot](https://github.com/wdecoster/NanoPlot) (v. 1.32.0) for quality control and trims adaptors using [downpore](https://github.com/jteutenberg/downpore) (v. 0.3.3). Default parameters were used for Nanoplot.  For Downpore, the identity matching threshold for the adaptors found in the middle  was increased to 100% (default is 85%).  No adapter sequences were identified in the final assemblies based on a minimap2 alignment of adapters using default parameters.
 
 ## Assembly
 
@@ -21,4 +21,4 @@ We used Flye (v.2.8.2-b1691) for de novo assembly of each of the strain's genome
 
 
 ## Comparing genomes using dotplot
-In order to visualize pairwise comparison between sequences we used a desktop app ([re-DOT-able](https://www.bioinformatics.babraham.ac.uk/projects/redotable/) ) from Babraham Bioinformatics to plot  interactively and also save the plots as images. We made pairwise comparisons between the reference genome and each of the seven assembled genomes to look for insert location and for any genome re-arrangements. In order to check the location Additionally we also plotted each assembly against the relevant insert sequences. For detailed information; Simon Andrews, the developer has a really good [video tutorial](https://www.youtube.com/watch?v=qPxl2hflG9Q&feature=emb_logo).
+In order to visualize pairwise comparison between sequences we used a desktop app ([re-DOT-able](https://www.bioinformatics.babraham.ac.uk/projects/redotable/) ) from Babraham Bioinformatics to plot  interactively and also save the plots as images. We made pairwise comparisons between the reference genome and each of the seven assembled genomes to look for insert location and for any genome re-arrangements. In order to verify the location, we also plotted each assembly against the relevant insert sequences. For detailed information regarding this app, Simon Andrews, the developer has a really good [video tutorial](https://www.youtube.com/watch?v=qPxl2hflG9Q&feature=emb_logo).
