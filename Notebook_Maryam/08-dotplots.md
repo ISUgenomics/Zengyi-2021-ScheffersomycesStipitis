@@ -39,4 +39,18 @@ I looked at the BUSCO score for the assemblies :
 | b19 | 74 | 23 | 15767318 | PQNB01000001.1 788195|PQNB01000001.1:1390849|
 
 
-I think for barcodes 16 and 19, the assembly is a little worse than barcode 13 and 18 ( from the slight increase in the number of missing BUSCOs). So the insertion location of insert 1 on these strains are different from each other among each method. I think that is why the histogram method provides the same location because it is based on the alignment of the reads on the reference genome not the assembly ! 
+I think for barcodes 16 and 19, the assembly is a little worse than barcode 13 and 18 ( from the slight increase in the number of missing BUSCOs). So the insertion location of insert 1 on these strains are different from each other among each method. I think that is why the histogram method provides the same location because it is based on the alignment of the reads on the reference genome not the assembly !
+
+
+
+-----------
+## Chromose information based on 2007 genome [ASM20916v1](https://www.ncbi.nlm.nih.gov/assembly/GCF_000209165.1)
+
+Chromosome 1	CM000437.1	=	NC_009068.1
+Chromosome 2	CP000496.1	=	NC_009042.1
+Chromosome 3	CP000497.1	=	NC_009043.1
+Chromosome 4	CP000498.1	=	NC_009044.1
+Chromosome 5	CP000499.1	=	NC_009045.1
+Chromosome 6	CP000500.1	=	NC_009046.1
+Chromosome 7	CP000501.1	=	NC_009047.1
+Chromosome 8	CP000502.1	=	NC_009048.1
