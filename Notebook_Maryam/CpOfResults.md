@@ -1,6 +1,6 @@
 # Results
 
-## Table 1 , Estimating the insertion locations from the alignment 
+## Table 1 , Estimating the insertion locations from the alignment
 
 
 | strain | insert | position of the insert on the reference genome -10k | position of the insert on the reference genome |position of the insert on the assembly  | confirmed by alignment of inserts on the assembly | confirmed by alignment of reads containing insert to the ref genome (hist)| confirmed by dotplot |
@@ -54,3 +54,10 @@
 |N29(barcode15)|5. BTDN|*PQNB01000005.1*:651628|*contig_4*:2058806| *contig_4*:2067054| 1x|
 |N29(barcode15)|5. BTDN|*PQNB01000001.1*:161193|*contig_4*:741832| *contig_4*:747898| Truncated? approx 6500|
 |N29(barcode15)|6. BNU-loxp|*PQNB01000019.1*:2089761|*contig_6*:3420928| *contig_6*:3445796| 5x (24868)|
+
+
+
+| strain | insert | 10kb upstream location 2019 ref | direction of insert |5 kb upstream location 2019 ref|
+| --- | --- | --- | --- | --- |--- |
+| 6 (b13) | 1.BSA4upstream | PQNB01000001.1 768685 | + |PQNB01000001.1 773685 |
+| 53 (b16)| 1.BSA4upstream | PQNB01000001.1 778195 | - |PQNB01000001.1 778195 |
