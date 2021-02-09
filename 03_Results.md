@@ -12,7 +12,7 @@ We did not observe rearrangement in the assembled strains:
 ### Insert locations
 
 | strain | insert | 10kb upstream location 2019 ref genome| direction of insert  | number of inserts |10KB upstream insert location on 2007 genome | chromosome |
-| --- | --- | --- | --- | --- |--- | --- |---|
+| --- | --- | --- | --- | --- |--- | --- |
 | 6 (b13) | 1.BSA4upstream | PQNB01000001.1 778685 | + | 1|NC_009042.1 1982553|Chromosome 2|
 | 53 (b16)| 1.BSA4upstream | PQNB01000001.1 778195 | -  |1|NC_009042.1 1963057|Chromosome 2|
 | 55 (b18)| 1.BSA4upstream | PQNB01000001.1 778685 | +  |1|NC_009042.1 1982553|Chromosome 2|
