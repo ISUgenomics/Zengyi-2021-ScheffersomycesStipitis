@@ -54,3 +54,19 @@ Chromosome 5	CP000499.1	=	NC_009045.1
 Chromosome 6	CP000500.1	=	NC_009046.1
 Chromosome 7	CP000501.1	=	NC_009047.1
 Chromosome 8	CP000502.1	=	NC_009048.1
+
+
+
+--------------
+
+| strain | insert | 10kb upstream location | direction of insert | insert location | number of inserts |
+| --- | --- | --- | --- | --- |--- |
+| 6 (b13) | 1.BSA4upstream | PQNB01000001.1 768685 | + | ||
+| 53 (b16)| 1.BSA4upstream | PQNB01000001.1 778195 | - | ||
+| 55 (b18)| 1.BSA4upstream | PQNB01000001.1 768685 | + | ||
+|88 (b19 )| 1.BSA4upstream | PQNB01000001.1 778195 | - | ||
+| | | | ||
+| 6 (b13) | 2.GTDNUdownstream| PQNB01000023.1 97903 |+| || *2 (+,-) |
+| 53 (b16) | 2.GTDNUdownstream| PQNB01000019.1 593474|-|| *1|
+| 55 (b18) | 2.GTDNUdownstream | PQNB01000022.1 605582 |+|*2 (+,-)|
+| 88 (b19) | 2.GTDNUdownstream | PQNB01000028.1 440888 |-| at least 2 (-,-)|
