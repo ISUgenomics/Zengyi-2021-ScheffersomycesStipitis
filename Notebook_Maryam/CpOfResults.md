@@ -58,11 +58,13 @@
 
 
 | strain | insert | 10kb upstream location 2019 ref | direction of insert |5 kb upstream location 2019 ref | estimated insert location |
-| --- | --- | --- | --- | --- | ---|--- |
+| --- | --- | --- | --- | --- | ---|
 | 6 (b13) | 1.BSA4upstream | PQNB01000001.1 768684:778196 | + |PQNB01000001.1 773690:778196 |
 ||||||||
 | 53 (b16)| 1.BSA4upstream | PQNB01000001.1 778200:787694 | - | PQNB01000001.1 	778200:782687|
 
+
+*
 | strain | insert | 10kb upstream location | direction of insert | insert location | number of inserts |10KB upstream insert location on 2007 genome | chromosome |
 | --- | --- | --- | --- | --- |--- | --- |---|
 | 6 (b13) | 1.BSA4upstream | PQNB01000001.1 768685 | + || 1|NC_009042.1 1972553|Chromosome 2|
