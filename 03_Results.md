@@ -26,7 +26,7 @@ We did not observe rearrangement in the assembled strains:
 | 6 (b13) | 2.GTDNUdownstream| PQNB01000023.1 97903 |+| | *2 (+,-) |NC_009045.1 554770|chromosome 5|
 | 53 (b16) | 2.GTDNUdownstream| PQNB01000019.1 593474|-| | *1|NC_009068.1 1580399|chromosome 1|
 | 55 (b18) | 2.GTDNUdownstream | PQNB01000022.1 605582 |+||*2 (+,-)|NC_009044.1 881874|chromose 4|
-| 88 (b19) | 2.GTDNUdownstream | PQNB01000028.1 440888 |-|| at least 2 (-,-)|NC_009068.1 3058614|chromosome 1|
+| 88 (b19) | 2.GTDNUdownstream | PQNB01000028.1 440888 |-|| *2 (-,-)|NC_009068.1 3058614|chromosome 1|
 
 
 
