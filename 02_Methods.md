@@ -16,7 +16,7 @@ We used Flye (v.2.8.2-b1691) for de novo assembly of each of the strain's genome
 
 ## Alignment
 
-[Minimap2](https://github.com/lh3/minimap2) (v. 2.2-r409) was used for all the alignments performed during this study. The known insert sequences were aligned to each assembled genome. Upstream sequence of each aligned insert to the assembled genome was extracted (10,000 bases) and then aligned to the reference genome (ASM694211v1) to identify the insert location in the reference genome.
+[Minimap2](https://github.com/lh3/minimap2) (v. 2.2-r409) was used for all the alignments performed during this study. The known insert sequences were aligned to each assembled genome. Upstream sequence of each aligned insert to the assembled genome was extracted (10,000 bases) and then aligned to the [reference genomes](https://www.ncbi.nlm.nih.gov/assembly/?term=txid322104%5BOrganism:noexp%5D) (ASM694211v1 and ASM694211v1) to identify the insert location.
 
 
 
