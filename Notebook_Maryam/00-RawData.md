@@ -4,7 +4,7 @@
 * Nova
 
 
-Csiva has downloaded the raw data as a tar file to ``
+Siva has downloaded the raw data as a tar file.
 I tried :
 
 ```bash
@@ -17,10 +17,4 @@ cd /work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/00-RawData/
 
 ln -s /work/gif/archiveNova/Zengyi_2021/1_36509_6_GridIONX5_1845.tar .
 
-tar -xvf 1_36509_6_GridIONX5_1845.tar
-```
-
-
-
-
-```
+tar -xvf 1_36509_6_GridIONX5_1845.tar```

@@ -63,7 +63,7 @@ awk '(NR%4==1){print}' FAO68114_pass_barcode13_598c81f2_0_adaptersRemoved.fastq 
 
 `@Barcode-13-(forward)_26a4210c-f10d-46ae-b345-ea93f90e14ff`
 
-Ok, it is only one. I did check and the reads are different. Only the ids are the same. It seems that one is left one is right. I am not sure what it means but I decided to rename them instead of deleting the read!
+Ok, it is only one. I did check and the reads are different. Only the ids are the same. It seems that one is left and one is right. I decided to rename them instead of deleting the read!
 
 ```bash
 less "FAO68114_pass_barcode13_598c81f2_0_adaptersRemoved.fastq" | tr '@Barcode-13-(forward)_26a4210c-f10d-46ae-b345-ea93f90e14ff runid=598c81f298f24cf974f62bf9136b2ea7dfc37f41 read=541 ch=195 start_time=2020-12-22T20:40:40Z flow_cell_id=FAO68114 protocol_group_id=1585 sample_id=no_sample barcode=barcode13 barcode_alias=barcode13_(left)' '@Barcode-13-(forward)_26a4210c-f10d-46ae-b345-ea93f90e14ff_l runid=598c81f298f24cf974f62bf9136b2ea7dfc37f41 read=541 ch=195 start_time=2020-12-22T20:40:40Z flow_cell_id=FAO68114 protocol_group_id=1585 sample_id=no_sample barcode=barcode13 barcode_alias=barcode13_(left)'
@@ -175,23 +175,26 @@ module load singularity
 ` FATAL:   While making image from oci registry: while building SIF from layers: conveyor failed to get: Error initializing source oci:/home/msayadi/.singularity/cache/oci:43e181f6c95958eb5c639526bfc3330844a9b45c021d551e27dd1906c51f218c: Error writing blob: open /home/msayadi/.singularity/cache/oci/oci-put-blob578989333: disk quota exceeded
 `
 
-I tried to redirect the cache to a temp directory but didn't work..
+I tried to redirect the cache to a temp directory but didn't work (Note: After making some space available it did work).
 
 ```bash
 SINGULARITY_LOCALCACHEDIR="/work/gif/Maryam/dot-files/"
 ```
-still had the same problem. SO I decided to delete the content of cache directory to free up space!
+still had the same problem. So I decided to delete the content of cache directory to free up space!
 
 ```bash
 du -hs /home/msayadi/
 ```
+
 `
 .singularity/cache/oci
 2.1G	/home/msayadi/.singularity/cache/oci
 `
+
 ```bash
 rm  -rf /home/msayadi/.singularity/cache/oci/*
 ```
+
 
 Ok, it works and now I have a list of species I can choose for Bosco.
 
@@ -247,6 +250,7 @@ or `156443` reads for barcode13 after trimming. number of reads before trimming 
 renaming the reads:
  ```
  grep "Barcode-13-(forward)_e70940d2-cd0a-461e-b4f1-13c2e8bfa03c" combine-barcode13_adaptersRemoved.fastq
+
 @Barcode-13-(forward)_e70940d2-cd0a-461e-b4f1-13c2e8bfa03c runid=598c81f298f24cf974f62bf9136b2ea7dfc37f41 read=11326 ch=222 start_time=2020-12-23T07:36:02Z flow_cell_id=FAO68114 protocol_group_id=1585 sample_id=no_sample barcode=barcode13 barcode_alias=barcode13_(left)
 @Barcode-13-(forward)_e70940d2-cd0a-461e-b4f1-13c2e8bfa03c runid=598c81f298f24cf974f62bf9136b2ea7dfc37f41 read=11326 ch=222 start_time=2020-12-23T07:36:02Z flow_cell_id=FAO68114 protocol_group_id=1585 sample_id=no_sample barcode=barcode13 barcode_alias=barcode13_(right)
 ```
@@ -308,7 +312,7 @@ I am going to add line number to all the ids to make them all uniq.
 paste - - - - < combine-barcode13_adaptersRemoved.fastq | awk 'BEGIN{NF = OFS = "\t"} { print $1"_"NR,$11,$12,$13}' | tr '\t' '\n' > combine-barcode13_uniqIDs.fastq
 ```
 
-And try flye again. FLye os working.
+And try flye again. Flye is running.
 
 Repeat that for all the barcodes:
 

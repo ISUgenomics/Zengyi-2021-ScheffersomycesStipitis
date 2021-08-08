@@ -1,9 +1,31 @@
 # Results
 
+### Assembly
+
+#### BUSCOs
+
+| Insert | Complete BUSCOs (C) | Complete and single-copy BUSCOs (S) | Complete and duplicated BUSCOs (D) | Fragmented BUSCOs (F) | Missing BUSCOs (M) | Total BUSCO group searched |
+| ---| ---|  ---| ---| ---| ---| ---|
+| 6 | 687 (90.7%) | 685 (90.4%)| 2 (0.3%)| 6 (0.8%) | 65 (8.5%) | 758 |
+|53| 681 (89.8%) | 680 (89.7%) | 1 (0.1%) | 7 (0.9%) | 70 (9.3%) | 758 |
+| 59 | 685 (90.3%) | 681 (89.8%) | 4 (0.5%) | 7 (0.9%) | 66 (8.8%) | 758 |
+| 88 | 678 (89.4%) | 677 (89.3%) | 1 (0.1%) | 6 (0.8%) | 74 (9.8%) | 758  |
+
+#### Assembly stats
+
+| insert | # of scaffolds| Total size of scaffolds | Longest scaffold | shortest scaffold | Number of scaffolds > 1M nt| Number of scaffolds > 100K nt|  Number of scaffolds > 10K nt | N50 | L50 | N90 | L90 |
+|---|---| ---|---|---|---|---|---|---|---|---| --- |
+|6 | 11| 16022515| 3579715| 16004|8| 10 | 11 | 1894960 | 3 | 1111997 | 7 |
+| 53| 10 | 15787988 |  4587006| 4261 | 6| 7 | 8| 3523743| 2  | 1113568 | 6|
+| 59 | 12 | 15994518 | 3515593 | 60343 |7| 9 | 12 | 1894562 | 3 | 1112789 | 7 |
+| 88 | 23 | 15767318 | 3532437 | 2149 |7| 9 | 13 |1755085 | 3 | 1109753 | 7 |
+
+
+
 
 ### Rearrangement
 
-We did not observe rearrangement in the assembled strains:  
+We did not observe rearrangement in the assembled strains:
 [dotplots in eps format](Notebook_Maryam/png/dotplots.eps)
 
 ![dotplots](Notebook_Maryam/png/dotplots.png)
