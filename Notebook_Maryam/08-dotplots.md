@@ -41,10 +41,12 @@ I looked at the BUSCO score for the assemblies :
 
 I think for barcodes 16 and 19, the assembly is a little worse than barcode 13 and 18 ( from the slight increase in the number of missing BUSCOs). So the insertion location of insert 1 on these strains are different from each other among each method. I think that is why the histogram method provides the same location because it is based on the alignment of the reads on the reference genome not the assembly !
 
+Note: After much more deliberations on the insert locations and trying to understand why the direction of insert 1 is different in assemblies with inserts b13 and b18 versus b16 and b19, we figured that the assemblies are in the reverse directions not the inserts. This will effect how I choose 10Kb upstream and how I need to correct for the insert location. After the necessary modifications, we had insert 1, integrated at the same locations in all cases as expected.
+
 
 
 -----------
-## Chromose information based on 2007 genome [ASM20916v1](https://www.ncbi.nlm.nih.gov/assembly/GCF_000209165.1)
+### Chromose information based on 2007 genome [ASM20916v1](https://www.ncbi.nlm.nih.gov/assembly/GCF_000209165.1)
 
 Chromosome 1	CM000437.1	=	NC_009068.1
 Chromosome 2	CP000496.1	=	NC_009042.1

@@ -3,13 +3,16 @@
 * Nova
 * Jan 21, 2021
 
+* Note1: I used 100 bp sections first around the insert location. I think 100 bp is not long enough. So later I tried 1000 bp sections.
+* Note2: I first started with both `minimap2` and `gmap` for alignment. However I decided to just continue with `minimap2`.
+
 The goal is to align the insert to the assembled genomes and find the location of inserts.
 
 #### Inserts
 
 The format of the insert sequences provided to us is `.dna`. I have to convert them to fasta format first.
 
-The program that generats `.dna` formats is [SnapGene](https://www.snapgene.com
+The program that generates `.dna` formats is [SnapGene](https://www.snapgene.com
   ). I download a free trial for my local machine and converted all the inserts to `fasta` format.
 
 * location of inserts: `/work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/00-RawData`
@@ -19,7 +22,7 @@ Inserts:
 ```
 BNU-loxP_sequence.fasta
 BSA4upstream.fasta
-BTDNU-loxP_sequence.fasta  
+BTDNU-loxP_sequence.fasta
 BTDN_sequence.fasta
 GSA4_sequence.fasta
 GTDNUdownstream.fasta
@@ -129,7 +132,7 @@ making a new directory for the reads +50bp and -50bp of each insert:
 cd /work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/
 mkdir uniq-alignment
 
-module laod samtools
+module load samtools
 cp ../../../02-fly/out_flye_b13/assembly.fasta ./assembly-b13.fasta
 
 samtools --indexing faixd assembly-b13.fasta
@@ -210,11 +213,7 @@ sbatch $filename
 
 running in a for loop.
 
-```bash
-for n in 13 14 15 16 17 18 19
 
-
-```
 
 ####  Barcode13 (strain 6):
 
@@ -263,7 +262,7 @@ For `2.GTDNUdownstream` I think this is the best alignment `2.GTDNUdownstream 0 
 
 I now proceed to run alignments on read sections of the assembly near the insertion area.
 
-First I use minimap to find alignemnt of a section of the assembly from  x-1000 bp till x bp.
+First I use minimap2 to find the alignment of a section of the assembly from  x-1000 bp till x bp.
 
 * 1.BSA4upstream (x=contig_18 784739)
 
@@ -394,7 +393,7 @@ less b13-gmap.gff3 | grep -v "#"| awk '{print $9}' | sed 's/:/ /g' | awk '{print
 ID=scaffold_3-2.GTDNUdownstream
 ```
 
-gmap probably did only picked `GTDNUdownstream` insert because it is more used for long less noisy reads and more sensitive to mismatches. minimap2 is designed for shorter more noisy reads.
+`gmap` probably did only picked `GTDNUdownstream` insert because it is more used for long less noisy reads and more sensitive to mismatches. `minimap2` is designed for shorter more noisy reads.
 
 ##### Location of each insert respect to the reference genome
 
@@ -464,7 +463,7 @@ Which was confirmed by minimap2 for `2.GTDNUdownstream`. Still didn't get any al
 * Feb 1 , 2021
 * Nova:/work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment
 
-We decided that gmap is not suitable for aligning nanopore reads. It is designed for shorter reads that are less noisy. So From now on I will only focus on minimap alignments.
+We decided that `gmap` is not suitable for aligning nanopore reads. It is designed for shorter reads that are less noisy. So From now on I will only focus on `minimap` alignments.
 
 
 I have aligned sections of assembly 1000 bp upstream of the insertion on the reference genome to estimate the insertion site on the ref. In some cases the location we got on the ref and assembly did not match. We have 2 pieces of evidence.
@@ -496,5 +495,5 @@ I renamed the sections so it is easier to find them in the sam file.
 Running minimap
 ```bash
 minimap2 -aLx map-ont  /work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/b13/inserts-minimap.fasta  /work/gif/Maryam/projects/Zengyi-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/GCA_006942115.1_ASM694211v1_genomic.fna > /work/gif/Maryam/projects/Zengyi
--2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/b13/aln-b13.sam 
+-2021-ScheffersomycesStipitis/03-alignment/uniq-alignemnt/b13/aln-b13.sam
 ```

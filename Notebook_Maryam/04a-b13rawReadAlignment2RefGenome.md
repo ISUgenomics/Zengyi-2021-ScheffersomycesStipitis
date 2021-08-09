@@ -30,9 +30,9 @@ ln -s ../../00-RawData/barcode13/combine-barcode13.fastq .
 I tried aligning the raw reads onto the insert and also tried aligning insert onto the raw reads. I also changed some parameters:
 
 
--N to get more alignments on the same target ( default was 5). This is specially important whan I am trying to align the reads on one insert!
+-N to get more alignments on the same target ( default was 5). This is specially important when I am trying to align the reads on one insert!
 
--p this is the ratio of primary to secondary ratio. by reducing this number we get more alignments, we get some alignment with lower alignment score. The default  is 0.8. With p=0.8 we get very few alignments. With 0.1 we got too much noise.  
+-p this is the ratio of primary to secondary ratio. by reducing this number we get more alignments, we get some alignment with lower alignment score. The default  is 0.8. With p=0.8 we get very few alignments. With 0.1 we got too much noise.
 
 
 
@@ -62,6 +62,3 @@ Now extract the reads from the list from the raw reads.
 module load seqtk
 seqtk subseq combine-barcode13.fastq name.list > rawread-sublist.fastq
 ```
-
-333817 + 15065 = 348882
-333817 + 8873 = 342690

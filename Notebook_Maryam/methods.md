@@ -4,7 +4,7 @@
 ## Sample Collection
 
 ## Sequence Analysis
-In order to estimate the insert locations, all strains have beed subject to nanopore sequencing using [GridION X5](https://nanoporetech.com/products/gridion) from Oxford Nanopore Technologies. For each strain we assembled a genome and locate the inserts on that genome as will be discussed further bellow.   
+In order to estimate the insert locations, all strains have beed subject to nanopore sequencing using [GridION X5](https://nanoporetech.com/products/gridion) from Oxford Nanopore Technologies. For each strain we assembled a genome and locate the inserts on that genome as will be discussed further bellow.
 
 ## QC and trimming
 
@@ -22,6 +22,6 @@ We used Flye (v.2.8.2-b1691) for de novo assembly of each of the strain's genome
 ## Comparing genomes using dotplot
 
 We used [re-DOT-able](https://www.bioinformatics.babraham.ac.uk/projects/redotable/) to compare the reference genome and assembled genome for each strain.
+
 =======
 In order to visualize pairwise comparison between sequences we used a desktop app ([re-DOT-able](https://www.bioinformatics.babraham.ac.uk/projects/redotable/) ) from Babraham Bioinformatics to plot  interactively and also save the plots as images. We made pairwise comparisons between the reference genome and each of the seven assembled genomes to look for insert location and for any genome re-arrangements. In order to check the location Additionally we also plotted each assembly against the relevant insert sequences. For detailed information; Simon Andrews, the developer has a really good [video tutorial](https://www.youtube.com/watch?v=qPxl2hflG9Q&feature=emb_logo).
-

@@ -1,4 +1,16 @@
-# Results
+# Insert locations
+
+* Note: Our initial thought was adding 10K to the insert location to correct for the length of the section we did alignment with. Remember that we used 10K upstream sections from the insert location on the assemblies and aligned them on the reference genome.
+Because we used 10K upstream, we assumed that the correct location on the reference genome should be correct by adding 10K to the insert location on the reference genome.
+We later figured that we had to correct for the direction of the assembly as well. The numbers in the tables in this section are not corrected for the direction of the assembly and might not match the final results.
+
+
+![+direction](png/insertLocation.png)
+
+![-direction](png/insertLocationReverseDirection.png)
+
+
+
 
 ## Table 1 , Estimating the insertion locations from the alignment
 
@@ -57,11 +69,6 @@
 
 
 
-| strain | insert | 10kb upstream location 2019 ref | direction of insert |5 kb upstream location 2019 ref | estimated insert location |
-| --- | --- | --- | --- | --- | ---|
-| 6 (b13) | 1.BSA4upstream | PQNB01000001.1 768684:778196 | + |PQNB01000001.1 773690:778196 |
-||||||||
-| 53 (b16)| 1.BSA4upstream | PQNB01000001.1 778200:787694 | - | PQNB01000001.1 	778200:782687|
 
 
 *
